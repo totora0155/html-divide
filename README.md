@@ -34,8 +34,7 @@ Use this
 ```js
 'use strict';
 
-const divide = require('..'),
-  assert = require('assert');
+const divide = require('html-divide');
 
 divide('.index.html', (err, data) => {
   if (err) {
