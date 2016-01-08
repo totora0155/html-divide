@@ -6,6 +6,7 @@ const divide = require('..'),
 
 fs.readFile('./test/test.html', 'utf-8', (err, content) => {
   const data = divide(content);
+  console.log(data);
   try {
     assert(data.head.trim() === '<p>head</p>', 'head isnt <p>head</p>');
     assert(data.body.trim() === '<p>body</p>', 'body isnt <p>body</p>');

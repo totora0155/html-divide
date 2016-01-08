@@ -1,5 +1,9 @@
 # HTML divide
 
+[![npm version](https://badge.fury.io/js/html-divide.svg)](https://badge.fury.io/js/html-divide)
+
+HTML divide to object by comment block.
+
 ## Install
 
 ```
@@ -11,22 +15,14 @@ npm i html-divide
 For example, Create index.html such as the following
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
+<!-- divide:head -->
+<p>head</p>
+<!-- enddivide -->
 
-  <!-- divide:head -->
-  <p>head</p>
-  <!-- enddivide -->
+<!-- divide:body -->
+<p>body</p>
+<!-- enddivide -->
 
-  <!-- divide:body -->
-  <p>body</p>
-  <!-- enddivide -->
-
-</body>
-</html>
 ```
 
 Use this way
@@ -39,12 +35,7 @@ const divide = require('html-divide'),
 
 fs.readFile('path/to/index.html', 'utf-8', (err, content) => {
   const data = divide(content);
-  try {
-    assert(data.head.trim() === '<p>head</p>', 'head isnt <p>head</p>');
-    assert(data.body.trim() === '<p>body</p>', 'body isnt <p>body</p>');
-  } catch(err) {
-    console.log(err);
-  }
+  console.log(data);  // output
 });
 
 ```
