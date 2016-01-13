@@ -18,7 +18,11 @@ class HtmlDivider {
       blocks[name] = content;
       block = re.exec(this.src);
     }
-    blocks.content = result.trim().replace(/\n+/, "\n");
+    if (!/^[\n\s]*$/.test(result)) {
+      blocks.content = result.trim().replace(/\n+/g, "\n");
+    } else {
+      blocks.content = null;
+    }
     return blocks;
   }
 }

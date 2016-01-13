@@ -54,6 +54,8 @@ Output
 
 ## Change log
 
+- 0.1.2  
+  Fix set null in `content` when `/^[\n\s]*$/`
 - 0.1.1  
   Add `content` property that collection of non-comment block
 - 0.1.0  
